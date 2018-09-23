@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
 import PropTypes from 'prop-types';
 
@@ -9,9 +9,15 @@ const Gists = ({ gists }) => {
       <ListGroup>
         {
           gists.map(gist => (
-            <ListGroupItem>
-              <a target="_blank" href={gist.html_url} rel="noopener noreferrer">{gist.description}</a>
-            </ListGroupItem>
+            <Fragment>
+              {
+                gist.description && (
+                  <ListGroupItem>
+                    <a target="_blank" href={gist.html_url} rel="noopener noreferrer">{gist.description}</a>
+                  </ListGroupItem>
+                )
+              }
+            </Fragment>
           ))
         }
       </ListGroup>
