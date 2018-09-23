@@ -19,3 +19,14 @@ body {
   width: 200px;
   margin: 10px;
 }
+
+.profile__image {
+  width: 300px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.profile__content-container {
+  display: flex;
+  margin-top: 30px;
+}
