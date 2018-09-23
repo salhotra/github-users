@@ -30,6 +30,8 @@ class User extends Component {
 
     if (user === null) return <div>Loading...</div>;
 
+    if (user.message === 'Not Found') return <div className="container">User not found</div>;
+
     return (
       <div className="container">
         <UserComponent user={user} repos={repos} gists={gists} />
