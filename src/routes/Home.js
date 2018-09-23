@@ -4,7 +4,7 @@ import uuid from 'uuid';
 import HomeComponent from '../components/Home';
 import {
   fetchUsers,
-  fetchUser,
+  searchUser,
 } from '../config/api';
 
 class Home extends Component {
@@ -24,7 +24,7 @@ class Home extends Component {
       const users = await fetchUsers();
       this.setState({ users });
     } else {
-      const response = await fetchUser(searchText);
+      const response = await searchUser(searchText);
       this.setState({ users: response.items });
     }
   }
